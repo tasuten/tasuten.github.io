@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Tasuten</title>
+
+  <meta name="author" content="tasuten" />
+  <meta name="description" content="tasutenのプロフィールページです" />
+  <link rel="icon" href="favicon.ico" />
+
+
+  <!-- CSS -->
+  <!-- Reset CSS -->
+  <style>
+/* Acknowledgements:
+ * jgthms/minireset.css https://github.com/jgthms/minireset.css
+ * necolas/normalize.css https://github.com/necolas/normalize.css
+ * Browser Default Styles https://browserdefaultstyles.com/
+ * cf.:
+ * CSS2.2 Appendix D. Default style sheet for HTML 4
+ * https://www.w3.org/TR/CSS22/sample.html
+ */
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    html {
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      line-height: 1;
+    }
+
+/* These tags is setted non-normal size / weight
+ * font-size:
+ *   h1, h2, h3, h5, h6
+ *   smaller: small, sub, sup
+ * font-weight:
+ *   bolder: th, h1-h6, b, strong
+ * font-style:
+ *   italic: i, cite, em, var, address
+ * font-family:
+ *   monospace: pre, code, kbd, samp
+ * text-decoration:
+ *   line-through: s, del
+ *   underline: u, ins, :link, :visited (:link is not-visited link)
+ * text-align:
+ *   center: th, caption
+ * colors of `a` tag differ by browsers
+ */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+      font-size: 100%;
+    }
+
+    small,
+    sub,
+    sup {
+      font-size: smaller;
+    }
+
+    th,
+    b,
+    strong {
+      font-weight: bolder;
+    }
+
+    pre,
+    code,
+    kbd,
+    samp {
+      font-family: monospace, monospace;
+      font-size: 1em;
+      font-variant-ligatures: no-common-ligatures;
+      font-kerning: none;
+    }
+
+    /* ruby for Japanese */
+    rt {
+      font-size: 50%;
+      font-variant-east-asian: ruby;
+    }
+
+    rt {
+      text-align: inherit;
+    }
+
+    ruby {
+      text-align: start;
+      ruby-align: space-around;
+      ruby-align: distribute-space;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    hr {
+      border-top: 1px dashed #f00;
+    }
+  </style>
+
+  <!-- Web Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Load other style libs here if you need -->
+
+  <!-- Main CSS -->
+  <style>
+    body {
+      color: #111;
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.75;
+
+      overflow-wrap: break-word;
+      hyphens: auto;
+
+      max-width: 90vw;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: dotted underline;
+    }
+
+
+    li {
+      margin-left: 1.5em;
+    }
+
+    small {
+      font-size: 0.875em;
+    }
+
+    h2,
+    h3 {
+      font-variant-east-asian: proportional-width;
+    }
+
+    ul,
+    ol {
+      margin-top: 0.75em;
+      margin-bottom: 0.75em;
+    }
+
+    ul ul,
+    ul ol,
+    ol ul,
+    ol ol {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    table {
+      margin: 1em;
+    }
+
+    td {
+      padding: 0.5em 1em;
+    }
+
+    td:first-child {
+      padding-left: 0;
+    }
+
+    td:last-child {
+      padding-right: 0;
+    }
+
+    /* first view */
+
+    #first-view {
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #first-view-container>h1 {
+      font-weight: 600;
+      font-size: 1.75rem;
+      margin-bottom: 1em;
+    }
+
+    #first-view-container p {
+      font-size: 1.0625rem;
+      /* 17/16 */
+    }
+
+
+    /* detail content */
+
+    #detail {
+      max-width: 40rem;
+      margin: 0 auto;
+    }
+
+    #detail>h2 {
+      font-size: 1.75rem;
+      padding-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    #detail>section+section {
+      margin-top: 4rem;
+    }
+
+    #detail>section>h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    #detail>section h4 {
+      font-size: 1.25rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #detail>section section+p {
+      margin-top: 1rem;
+    }
+
+    /* footer copyright */
+
+    body>footer {
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+    }
+
+    #copyright {
+      max-width: 40rem;
+      margin: 0 auto;
+
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <section id="first-view">
+    <div id="first-view-container">
+      <h1>Tasuten</h1>
+      <p>I wanna remain a geek, an otaku, and a dilettante.</p>
+      <p>
+        See
+        <a href="https://twitter.com/tasuten">Twitter</a>,
+        <a href="https://github.com/tasuten">GitHub</a>,
+        or
+        <a href="#detail">more info&#x2b07;</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="detail">
+    <h2>詳細</h2>
+
+    <section>
+      <h3>概略</h3>
+      <p>インターネット上では<ruby>tasuten<rp>（</rp>
+          <rt>タステン</rt>
+          <rp>）</rp>
+        </ruby>というハンドルネームでやっていることが多いです。</p>
+      <p>
+        一応人生のほぼ半分近く、コンピュータとその隣接分野に趣味も含めて触れて来ました。大学時代の専攻は情報セキュリティでした。
+      </p>
+      <p>
+        長い間疾病を抱えており、現在はその療養のため有り体に言えば無職となっています。社会復帰はしたいのですが体調次第ということもあり明確なことが言える状況ではないようです。
+      </p>
+    </section>
+
+    <section>
+      <h3>リンク集</h3>
+      <ul>
+        <li>技術系のブログっぽいもの: <a href="https://tasuten.github.io/notes/">忘れな草稿</a></li>
+        <li>日常系のブログ: <a href="https://tasuten-diary.hatenablog.com/">鴨と子規と。</a></li>
+        <li>旧ブログ（2010年&#x301C;2017年）: <a href="https://tasuten.hatenablog.com/">' OR title = 'tasuten''s blog' --</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="biography">
+      <h3>略歴</h3>
+      <table>
+        <tr>
+          <td>2011年3月以前</td>
+          <td>高校は疾病から早期に中退。独力で高等学校卒業程度認定試験（旧大検）に合格し大学を受験しました。</td>
+        </tr>
+        <tr>
+          <td>2011年4月&#x301C;2015年3月</td>
+          <td>京都産業大学コンピュータ理工学部卒業（学士）</td>
+        </tr>
+
+        <tr>
+          <td>2015年4月&#x301C;2018年9月</td>
+          <td>京都産業大学大学院先端情報学研究科に進学も、またしても同疾病から休学などを挟んだのち博士前期課程（修士課程）途中で中退</td>
+        </tr>
+        <tr>
+          <td>2018年9月&#x301C;現在</td>
+          <td>療養のため無職</td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <h3>実績</h3>
+      <section>
+        <h4>資格</h4>
+        <ul>
+          <li>2013年春期情報セキュリティスペシャリスト試験合格</li>
+          <li>2013年秋期ネットワークスペシャリスト試験合格</li>
+        </ul>
+        など
+      </section>
+      <section>
+        <h4>学生向けインターンシップ</h4>
+        <ul>
+          <li><a href="https://tasuten.hatenablog.com/entry/2016/03/25/030707">pixiv 2016 SPRING BOOT CAMP参加</a></li>
+          <li><a href="https://tasuten.hatenablog.com/entry/2016/09/21/144241">サイボウズ・エンジニアサマーインターン2016参加</a></li>
+        </ul>
+        など
+      </section>
+      <p>
+        コードなどは<a href="https://github.com/tasuten">GitHub</a>をご参照下さい。ここ数年は体調不良もありあまり活発にコードを書けていません。
+      </p>
+    </section>
+
+    <section>
+      <h3>趣味・嗜好</h3>
+      <p>
+        インドアという範疇でですがそこそこ多趣味です。どちらかというと興味は浅く広く、という印象です。ただ対象がややマニアックだったりはします。
+      </p>
+      <ul>
+        <li>コンピュータ系
+          <ul>
+            <li>ここ十数年はmacOSやLinuxなどUNIX系OSがメイン環境です。エディタはVim系列のものを使うことが多いです。</li>
+            <li>プログラミング言語は大体の言語はちょい触り程度ですが、Ruby、Scheme、Erlangなどの少し変わった言語のほうが好きです。</li>
+            <li>電気街なんかでジャンク品を漁るのも好きです。最近のものより昔のものを買うことが多いです。</li>
+            <li>書体なども好きです。かなり昔ですがフォントを自作したりもしてました。</li>
+          </ul>
+        </li>
+        <li>趣味の学術系
+          <ul>
+            <li>特に東アジアの太陰太陽暦（いわゆる旧暦）の数理について惹かれています。</li>
+            <li>その一環で同系統のものを含む古書などをよく即売会や古書店で買っています。</li>
+            <li>ほか人文・自然問わずいろんな学問分野を齧ってますが、ほとんどは実用というより直接生活の役に立たない分野のほうが好きです。</li>
+          </ul>
+        </li>
+        <li>アニメ・マンガ・同人文化
+          <ul>
+            <li>買い専・読み専です。</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>連絡先</h3>
+      <p>
+      <ul>
+        <li>前述の<a href="https://twitter.com/tasuten">Twitterアカウント</a>へのDMなどが比較的お手軽かと思います。</li>
+        <li>E-mailの場合は「heliopause64+profileのあとに@gmail.comをつけたアドレス」にご連絡下さい。回りくどいアドレスの書き方なのは気休め程度のSPAM bot避けです。</li>
+      </ul>
+      </p>
+    </section>
+  </section>
+
+  <footer>
+    <p id="copyright">
+      <small>
+        Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> by tasuten.
+      </small>
+    </p>
+  </footer>
+</body>
+
+</html>
